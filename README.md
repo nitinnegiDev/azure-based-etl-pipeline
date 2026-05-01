@@ -10,7 +10,7 @@ Source Systems → Azure Data Factory → Azure Data Lake (Bronze Layer) → Dat
 
 1. Source data is ingested dynamically using parameterized pipelines.
 2. Data is stored in Azure Data Lake Storage (Bronze Layer).
-3. Incremental data is identified using watermark logic via lookup activity.
+3. Incremental data is identified using watermark logic via ADF Lookup activity, with watermark values managed and updated using a SQL stored procedure.
 4. Data is processed in Databricks using PySpark transformations.
 5. Transformed data is loaded into fact and dimension tables for analytics.
 
