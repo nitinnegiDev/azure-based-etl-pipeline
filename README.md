@@ -4,27 +4,60 @@ This project demonstrates a production-style data pipeline built on Azure, imple
 
 ## Architecture
 
-## Source Data Preparation Pipeline
+## Data Flow
+
+1. Source data is ingested dynamically using parameterized pipelines.
+2. Data is stored in Azure Data Lake Storage container (bronze layer).
+3. Incremental data is identified using watermark logic via lookup activity.
+4. Data is processed in Databricks using PySpark transformations.
+5. Transformed data is loaded into fact and dimension tables for analytics.
+
+
+## Pipeline Orchestration
+
+### Source Data Preparation Pipeline
 This pipeline is designed to dynamically ingest data from multiple sources using parameterized file paths and dataset configurations.
 
-### Pipeline View
+
+#### Pipeline View
 <img width="295" height="149" alt="source_prep_pipeline" src="https://github.com/user-attachments/assets/1132204f-1270-439b-af7a-b826701641fb" />
 
-
-### Pipeline Parameters
+#### Pipeline Parameters
 <img width="740" height="294" alt="source_prep_pipeline_parameters" src="https://github.com/user-attachments/assets/d4157d4c-7ac1-42e7-978f-3998c21c95d8" />
 
 
-### Parameter Usage in Copy Activity
+#### Parameter Usage in Copy Activity
 <img width="1698" height="258" alt="source_copy_activity_parameters" src="https://github.com/user-attachments/assets/877ab996-6a14-4cdc-96f7-c37281e176d9" />
 
 
-## Incremental Data Pipeline
+### Incremental Data Pipeline
 Pipeline performs incremental ingestion using lookup-based watermarking, followed by transformation in Databricks and loading into fact/dimension tables.
 
-### Pipeline View
+#### Pipeline View
 <img width="1443" height="499" alt="inc_data_pipeline" src="https://github.com/user-attachments/assets/0db224ab-1ad2-44d1-bcdd-9c14b8324f42" />
 
+
+## Data Transformation (Databricks)
+
+### Transformation Logic
+(image)
+
+### Output Data
+(image)
+
+## Key Features
+
+- Incremental data loading using watermarking strategy
+- Parameterized pipelines for reusable ingestion
+- Modular pipeline design with separation of concerns
+- Scalable data processing using PySpark (Databricks)
+- Fact and dimension data modeling
+
+## Design Decisions
+
+- Used watermarking to efficiently process only new data
+- Parameterized pipelines to enable reuse across datasets
+- Separated ingestion and transformation for modular architecture
 
 
 
