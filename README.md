@@ -36,6 +36,20 @@ Pipeline performs incremental ingestion using lookup-based watermarking, followe
 #### Pipeline View
 <img width="1443" height="499" alt="inc_data_pipeline" src="https://github.com/user-attachments/assets/0db224ab-1ad2-44d1-bcdd-9c14b8324f42" />
 
+## Pipeline Execution
+
+### ADF Orchestration Run
+Pipeline execution monitored via ADF Monitor, ensuring successful incremental ingestion and downstream processing.
+#### Monitor Overview
+<img width="1830" height="289" alt="monitor_inc_pipeline_run" src="https://github.com/user-attachments/assets/0afe3274-4fcf-4ece-a9e3-5e99b6c02469" />
+
+#### Activity-Level Execution
+<img width="1837" height="952" alt="inc_pipeline_run_detailed_activity_view" src="https://github.com/user-attachments/assets/8662f0f8-dd1b-4f01-93bf-1b0684fa8039" />
+
+
+#### Databricks Job Execution
+<img width="1618" height="683" alt="databricks_job_run" src="https://github.com/user-attachments/assets/97055b55-db90-4ad4-af58-6b5963067494" />
+
 
 ## Data Transformation (Databricks)
 
