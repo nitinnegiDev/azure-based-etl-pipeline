@@ -64,7 +64,8 @@ Data transformation is performed using PySpark in Databricks, where raw data is 
 - Created derived KPIs (e.g., revenue per unit)
 - Aggregated data for analytical use cases
 - Stored processed data in Silver layer
-- 
+
+
 #### Transformation Logic
 <img width="1220" height="787" alt="silver_nb_transfrom_col" src="https://github.com/user-attachments/assets/0b0eb497-1d5e-4752-8b58-f7c7b247fef7" />
 <img width="1176" height="725" alt="silver_nb_kpi" src="https://github.com/user-attachments/assets/33972f60-2f70-4116-ad4d-0a55515b1db9" />
@@ -85,9 +86,7 @@ Data transformation is performed using PySpark in Databricks, where raw data is 
 - Ensured deduplication and consistency of dimension data
 
 #### Dimension Table Logic (Example: dim_model)
-<img width="1176" height="261" alt="gold_nb_df_src" src="https://github.com/user-attachments/assets/ee35d576-42f6-484a-a702-1d69b6f8b43d" />
 <img width="1178" height="195" alt="gold_nb_df_joined" src="https://github.com/user-attachments/assets/b3f6a7c0-e83d-461c-92f9-c1a0f0024d44" />
-<img width="1177" height="199" alt="gold_nb_filter_new_rec" src="https://github.com/user-attachments/assets/0602f64e-2771-4f1a-a597-51888ff228ff" />
 
 
 #### SCD Type-1 Upsert using Delta Lake
@@ -96,6 +95,7 @@ Data transformation is performed using PySpark in Databricks, where raw data is 
 
 #### Fact Table Creation (Star Schema)
 - Designed fact table by joining multiple dimension tables (star schema)
+- Generated analytical dataset with measures and surrogate keys for reporting
 <img width="1174" height="870" alt="fact_table_creation" src="https://github.com/user-attachments/assets/1318f5b7-5317-43b0-b904-2f8e4393c338" />
 
 
@@ -124,6 +124,12 @@ Data transformation is performed using PySpark in Databricks, where raw data is 
 - Azure Databricks
 - PySpark
 - SQL
+
+
+## Code Reference
+
+- Databricks Notebooks: [`/databricks`](./databricks)
+- SQL Scripts: [`/sql`](./sql)
 
 
 
